@@ -99,6 +99,20 @@ This keeps the project aligned with “do real work” ergonomics while still gi
 
 AGPL-3.0-or-later (plus Palimpsest where indicated).
 
+== Ecosystem Analysis
+
+This repository hosts the comprehensive seam analysis for the entire AmbientOps System Tools ecosystem:
+
+link:docs/SEAM-ANALYSIS.adoc[docs/SEAM-ANALYSIS.adoc]
+
+The analysis covers:
+
+* 4 CRITICAL issues (race conditions, command injection, principle violations)
+* 8 HIGH severity issues (schema gaps, enforcement failures)
+* 12 MEDIUM issues (performance, ergonomics, documentation)
+* Integration seam mapping across all subsystems
+* Remediation roadmap with prioritized fixes
+
 == Roadmap
 
 See `ROADMAP.adoc`.

@@ -17,11 +17,11 @@ Development roadmap for Operating Room (formerly big-up): the plan-first “doer
 
 | Phase 1
 | Specifications + contracts
-| ⏳ Pending
+| ⏳ In Progress
 
 | Phase 2
 | MVP implementation (Scan→Plan→Apply→Undo→Receipt)
-| 🔲 Not Started
+| ⏳ Started (basic CLI)
 
 | Phase 3
 | Packs/adapters + integrations + packaging
@@ -61,7 +61,18 @@ Deliverables:
 
 == Phase 2: Core MVP (Scan→Plan→Apply→Undo→Receipt)
 
-Deliverables:
+=== Current implementation
+
+Basic `sor` CLI with system maintenance commands:
+
+* `optimize` - System optimization (NVIDIA, firewall, journal, network)
+* `cleanup` - Cache and temp file cleaning
+* `sync` - Repository synchronization
+* `check` - Check repos for uncommitted changes
+* `analyze` - GitHub workflow failure analysis
+* `pages` - GitHub Pages status check
+
+=== Remaining deliverables
 
 * Core CLI:
   - `detect`, `scan`, `plan`, `apply`, `undo`, `receipt`, `export`

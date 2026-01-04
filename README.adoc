@@ -1,6 +1,6 @@
 = Operating Room (formerly big-up)
 
-image:https://img.shields.io/badge/License-MPL_2.0-blue.svg[MPL-2.0,link="https://opensource.org/licenses/MPL-2.0"]
+image:https://img.shields.io/badge/License-AGPL_3.0-blue.svg[AGPL-3.0,link="https://opensource.org/licenses/AGPL-3.0"]
 image:https://img.shields.io/badge/Philosophy-Palimpsest-purple.svg[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-licence"]
 
 :toc:
@@ -10,12 +10,11 @@ image:https://img.shields.io/badge/Philosophy-Palimpsest-purple.svg[Palimpsest,l
 
 A **plan-first** system management and hardening tool — designed as a free/open alternative to “optimizer” utilities that nag, exaggerate, or sell fear.
 
-[IMPORTANT]
+[NOTE]
 ====
-*Project status:* *Specification Pending*
+*Project status:* *Alpha - CLI Implementation Present*
 
-This repository currently contains infrastructure configuration and governance/policy only.
-Implementation code and the detailed specifications will land next.
+The core `sor` CLI is implemented in D. Run `./sor help` for available commands.
 ====
 
 == What it is
@@ -62,31 +61,66 @@ Operating Room will be **D-first**, with **Rust for safety-critical components**
 
 This keeps the project aligned with “do real work” ergonomics while still giving us a place to put the most sensitive code paths.
 
-== Repository contents (current)
+== Building
+
+=== Prerequisites
+
+* LDC2 (LLVM D Compiler) or DMD
+* dub (D package manager)
+
+On Fedora Kinoite:
+[source,bash]
+----
+toolbox run sudo dnf install ldc ldc-libs
+----
+
+=== Compile
+
+[source,bash]
+----
+toolbox run dub build --release
+----
+
+The binary will be at `./sor`.
+
+== Usage
+
+[source,bash]
+----
+./sor help           # Show available commands
+./sor optimize       # System optimization (NVIDIA, firewall, journal)
+./sor cleanup        # Clean caches and temp files
+./sor sync           # Sync all git repositories
+./sor check          # Check repos for uncommitted changes
+./sor analyze        # Analyze GitHub workflow failures
+./sor pages          # Check GitHub Pages status
+----
+
+== Repository contents
 
 [cols="1,3,1",options="header"]
 |===
 | Component | Description | Status
 
-| `.github/workflows/mirror.yml`
-| Hub-and-spoke multi-forge mirroring (GitLab, Codeberg, Bitbucket)
+| `src/main.d`
+| Core CLI implementation in D
 | ✓ Active
 
-| `.github/workflows/instant-sync.yml`
-| Automatic forge propagation on push/release
+| `dub.json`
+| D build configuration
 | ✓ Active
 
-| `.claude/CLAUDE.md`
-| Technology governance policy
+| `.github/workflows/`
+| CI/CD and forge mirroring
 | ✓ Active
 
-| Implementation code
-| Core functionality
-| ⏳ Pending
+| `docs/`
+| Specifications and design documents
+| ✓ Active
 
-| Specifications
-| Detailed design and architecture
-| ⏳ Pending
+| `hooks/`
+| Workflow validation scripts
+| ✓ Active
 |===
 
 == Security requirements (baseline)

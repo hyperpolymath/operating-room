@@ -1,0 +1,20 @@
+{
+    "name": "operating-room",
+    "description": "System maintenance and operations toolkit",
+    "authors": ["Hyperpolymath"],
+    "license": "AGPL-3.0-or-later",
+    "targetType": "executable",
+    "targetName": "sor",
+    "sourcePaths": ["src"],
+    "mainSourceFile": "src/main.d",
+    "buildOptions": {
+        "debug": ["debugMode"],
+        "release": ["optimize", "inline"]
+    },
+    "configurations": [
+        {
+            "name": "application",
+            "targetType": "executable"
+        }
+    ]
+}

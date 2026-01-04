@@ -7,15 +7,5 @@
     "targetName": "sor",
     "sourcePaths": ["src"],
     "importPaths": ["src"],
-    "mainSourceFile": "src/main.d",
-    "buildOptions": {
-        "debug": ["debugMode"],
-        "release": ["optimize", "inline"]
-    },
-    "configurations": [
-        {
-            "name": "application",
-            "targetType": "executable"
-        }
-    ]
+    "mainSourceFile": "src/main.d"
 }

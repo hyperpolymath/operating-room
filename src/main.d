@@ -12,12 +12,14 @@ import std.string;
 import std.file;
 
 import core.types;
-import core.engine;
+import core.engine : applyPlan, executeUndo, generateReceipt, saveReceipt,
+                      saveUndoTokens, printPlanPreview, RUN_BUNDLE_DIR;
 import core.security;
 import core.ecosystem;
 import packs.system;
 import packs.cleanup;
 import packs.repos;
+import std.conv : to;
 
 /// Version info
 enum VERSION = "0.1.0";

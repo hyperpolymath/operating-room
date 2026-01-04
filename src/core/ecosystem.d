@@ -19,13 +19,16 @@ import std.json;
 import std.datetime;
 import std.string;
 import std.process;
+import std.conv : to;
 
 /// Run bundle format version
 enum RUN_BUNDLE_VERSION = "1.0.0";
 
 /// Default paths for ecosystem integration
 enum OBSERVATORY_INBOX = "/var/home/hyper/.local/share/ambientops/observatory/inbox";
-enum RUN_BUNDLE_DIR = "/var/home/hyper/.local/share/sor/runs";
+
+// Import RUN_BUNDLE_DIR from engine
+import core.engine : RUN_BUNDLE_DIR;
 
 /// Run bundle - complete record of a plan execution
 struct RunBundle

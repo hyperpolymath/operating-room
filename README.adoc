@@ -5,7 +5,7 @@
 :icons: font
 :source-highlighter: rouge
 
-image:https://img.shields.io/badge/License-AGPL_3.0-blue.svg[AGPL-3.0,link="https://opensource.org/licenses/AGPL-3.0"]
+image:https://img.shields.io/badge/License-AGPL_3.0-blue.svg[PMPL-1.0,link="https://opensource.org/licenses/PMPL-1.0"]
 image:https://img.shields.io/badge/Philosophy-Palimpsest-purple.svg[Palimpsest,link="https://github.com/hyperpolymath/palimpsest-licence"]
 
 A **plan-first** system management and hardening tool — designed as a free/open alternative to "optimizer" utilities that nag, exaggerate, or sell fear.
@@ -187,4 +187,4 @@ src/
 
 == License
 
-AGPL-3.0-or-later (plus Palimpsest where indicated).
+PMPL-1.0-or-later (plus Palimpsest where indicated).
